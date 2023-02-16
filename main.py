@@ -11,9 +11,9 @@ description = "ASDSD"
 
 client = discord.Client(command_prefix='@',description=description, intents=intents)
 
-@client.event()
-async def on_ready():
-    print(f'We have logged in as {client.user}')
+# @client.event
+# async def on_ready():
+#     print(f'We have logged in as {client.user}')
 
 @client.command()
 async def szia(ctx): 
