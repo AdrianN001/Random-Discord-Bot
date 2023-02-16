@@ -32,6 +32,7 @@ pluggy==1.0.0
 proglog==0.1.9
 py==1.10.0
 pycodestyle==2.8.0
+python-dotenv==0.21.0
 pytest==3.10.1
 PyNaCl==1.4.0
 pytz==2021.3
