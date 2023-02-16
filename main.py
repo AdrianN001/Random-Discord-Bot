@@ -26,7 +26,7 @@ async def szia(ctx):
 # The below code bans player.
 @client.command()
 @has_permissions(ban_members=True)
-async def ban(self, ctx, member: discord.Member, *, reason=None):
+async def ban( ctx, member: discord.Member, *, reason=None):
      await member.ban(reason=reason)
      await ctx.send(f'User {member} has been kick')
 
