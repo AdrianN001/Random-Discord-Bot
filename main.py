@@ -11,7 +11,7 @@ description = "ASDSD"
 
 client = discord.Client(command_prefix='@',description=description, intents=intents)
 
-@client.event
+@client.event()
 async def on_ready():
     print(f'We have logged in as {client.user}')
 
