@@ -12,7 +12,7 @@ intents.members = True
 
 description = "ASDSD"
 
-client = Bot(command_prefix='@',description=description, intents=intents)
+client = Bot(command_prefix='卐',description=description, intents=intents)
 
 # @client.event
 # async def on_ready():
