@@ -4,6 +4,8 @@ from discord.ext.commands import Bot,has_permissions
 import dotenv
 import os
 from  src.open_ai import get_open_ai
+from src.image_man import Ascii_Image
+from discord.utils import escape_markdown
 
 dotenv.load_dotenv()
 
@@ -13,7 +15,7 @@ intents.members = True
 
 description = "ASDSD"
 
-client = Bot(command_prefix='卐',description=description, intents=intents)
+client = Bot(command_prefix='$',description=description, intents=intents)
 
 # @client.event
 # async def on_ready():
@@ -36,6 +38,19 @@ async def open_ai(ctx, message: str) -> None:
     
     await ctx.send("Nagy gondolkozasokba....")
     await ctx.send(get_open_ai(message))
+
+@client.command()
+async def ascii(ctx, *, characters = ""):
+
+    image = ctx.message.attachments[0]
+
+    url = image.url
+
+    image = Ascii_Image(url)
+
+    image.create_file()
+
+    await ctx.send(file = discord.File("src/temp.txt"))
     
 
 client.run(os.environ.get("DISCORD_BOT_TOKEN"))
